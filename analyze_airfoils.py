@@ -12,7 +12,7 @@ def run_xfoil_and_parse_output(xfoil_commands: str, cwd: str, airfoil_name: str,
     Returns a dictionary of metrics.
     """
     print(f"🔹 Analyzing {airfoil_name} at Re={Re}, alpha={alpha}...")
-    print('testing git')
+    # print('testing git')
     try:
         result = subprocess.run(
             ["xfoil.exe"],
