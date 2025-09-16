@@ -1,4 +1,3 @@
-# fetch_airfoils.py
 import os
 import requests
 from typing import List
@@ -10,7 +9,7 @@ def fetch_airfoils(airfoil_list: List[str]) -> list:
     """
     Fetch .dat files from UIUC into ./airfoils.
     Skips any that already exist.
-    Returns list of file paths successfully available (downloaded or cached).
+    Returns list of file paths successfully available.
     """
     os.makedirs(AIRFOIL_DIR, exist_ok=True)
     fetched_files = []
@@ -38,7 +37,6 @@ def fetch_airfoils(airfoil_list: List[str]) -> list:
     return fetched_files
 
 if __name__ == "__main__":
-    # quick smoke test
     airfoils = ["naca2412", "s1223", "e423", "sd7037", "s3021", "ag35", "naca23012", "naca4415"]
     files = fetch_airfoils(airfoils)
     print("\nReady:", files)
