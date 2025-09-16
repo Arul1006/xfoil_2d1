@@ -1,53 +1,44 @@
+# fetch_airfoils.py
 import os
 import requests
 from typing import List
 
-AIRFOIL_DIR = "airfoils"
 UIUC_BASE = "https://m-selig.ae.illinois.edu/ads/coord/"
+AIRFOIL_DIR = "airfoils"
 
-
-def download_airfoil_dat(airfoil_name: str) -> str:
+def fetch_airfoils(airfoil_list: List[str]) -> list:
     """
-    Downloads an airfoil .dat file from UIUC if not cached.
-    Returns the local filepath.
+    Fetch .dat files from UIUC into ./airfoils.
+    Skips any that already exist.
+    Returns list of file paths successfully available (downloaded or cached).
     """
     os.makedirs(AIRFOIL_DIR, exist_ok=True)
-    filename = f"{airfoil_name}.dat"
-    filepath = os.path.join(AIRFOIL_DIR, filename)
-    url = f"{UIUC_BASE}{filename}"
+    fetched_files = []
 
-    if os.path.exists(filepath):
-        print(f"📂 {filename} already exists. Skipping download.")
-        return filepath
+    for name in airfoil_list:
+        file_path = os.path.join(AIRFOIL_DIR, f"{name}.dat")
+        if os.path.exists(file_path):
+            print(f"📂 {name}.dat already exists. Skipping download.")
+            fetched_files.append(file_path)
+            continue
 
-    try:
-        response = requests.get(url)
-        response.raise_for_status()
-        with open(filepath, "w") as f:
-            f.write(response.text)
-        print(f"✅ Downloaded {filename} to {AIRFOIL_DIR}")
-        return filepath
-    except Exception as e:
-        print(f"❌ Failed to fetch {filename}: {e}")
-        return None
+        url = f"{UIUC_BASE}{name}.dat"
+        try:
+            r = requests.get(url, timeout=20)
+            r.raise_for_status()
+        except requests.exceptions.RequestException as e:
+            print(f"❌ Failed to fetch {name} from UIUC: {e}")
+            continue
 
+        with open(file_path, "w", newline="\n") as f:
+            f.write(r.text)
+        print(f"✅ Downloaded {name} → {file_path}")
+        fetched_files.append(file_path)
 
-def fetch_airfoils(airfoil_list: List[str]) -> dict:
-    """
-    Fetch all airfoils and return a dict {name: path}.
-    """
-    airfoil_dict = {}
-    for af_name in airfoil_list:
-        af_path = download_airfoil_dat(af_name)
-        if af_path is not None:
-            airfoil_dict[af_name] = af_path
-    return airfoil_dict
-
+    return fetched_files
 
 if __name__ == "__main__":
-    airfoils = [
-        "naca2412", "s1223", "e423", "sd7037", "s3021",
-        "ag35", "naca23012", "naca4415"
-    ]
+    # quick smoke test
+    airfoils = ["naca2412", "s1223", "e423", "sd7037", "s3021", "ag35", "naca23012", "naca4415"]
     files = fetch_airfoils(airfoils)
     print("\nReady:", files)
