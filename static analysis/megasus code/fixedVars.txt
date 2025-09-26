@@ -1,0 +1,8 @@
+wingspan < 5 feet
+aerofoil - ND 
+wingLoading = weight/wingArea = also fixed but not decided
+idealWingArea = fixed but not decided
+twist = 0 
+taper = 0 
+polyhedral (iterative ver of dihedral)
+include grouping of ducks
