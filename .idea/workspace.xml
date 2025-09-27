@@ -5,7 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5e310b3d-67b7-4070-b27e-3e75810c7384" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/plots/LD_comparison.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plots/ag35_Re698160.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plots/e423_Re698160.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plots/naca23012_Re698160.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plots/naca2412_Re698160.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plots/naca4415_Re698160.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plots/s1223_Re698160.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/airfoil_comparison.csv" beforeDir="false" afterPath="$PROJECT_DIR$/airfoil_comparison.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/airfoil_polars.csv" beforeDir="false" afterPath="$PROJECT_DIR$/airfoil_polars.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/analyze_airfoils.py" beforeDir="false" afterPath="$PROJECT_DIR$/analyze_airfoils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plot_airfoils.py" beforeDir="false" afterPath="$PROJECT_DIR$/plot_airfoils.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,18 +45,18 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;Python.AeroSanboxMain.executor&quot;: &quot;Run&quot;,
-    &quot;Python.Main.executor&quot;: &quot;Run&quot;,
-    &quot;Python.analyze_airfoils.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/Arul/PycharmProjects/aerogitsatviktrial&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "Python.AeroSanboxMain.executor": "Run",
+    "Python.Main.executor": "Run",
+    "Python.analyze_airfoils.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "D:/Arul/PycharmProjects/xfoil_2d1",
+    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings"
   }
-}</component>
+}]]></component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>

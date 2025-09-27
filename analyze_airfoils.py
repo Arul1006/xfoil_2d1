@@ -74,7 +74,8 @@ def run_xfoil(airfoil, alphas, Re=1e6, Mach=0.0):
 def analyze_airfoils(airfoils):
     """Run XFOIL on all airfoils and save unified CSV."""
     # New alpha range: -30° → 30° (step 1°)
-    alphas = list(range(-30, 31, 1))
+    alphas = np.arange(-30, 30.5, 0.5).tolist()
+
 
     # Reynolds sweep: 30k → 3M with 200 steps (log-spaced for physics realism)
     Res = np.logspace(np.log10(3e4), np.log10(3e6), 200)
@@ -110,5 +111,5 @@ def analyze_airfoils(airfoils):
 
 
 if __name__ == "__main__":
-    airfoils = ["naca2412", "naca4415", "s1223", "e423", "sd7037", "s3021", "ag35", "naca23012"]
+    airfoils = ["naca2412", "naca4415", "s1223", "e423", "s3021", "ag35", "naca23012"]
     analyze_airfoils(airfoils)

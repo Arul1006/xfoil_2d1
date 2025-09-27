@@ -7,7 +7,7 @@ from plot_airfoils import plot_results
 if __name__ == "__main__":
     # Pick your airfoils here (names must exist on UIUC)
     airfoils = [
-        "naca2412", "s1223", "e423", "sd7037", "s3021",
+        "naca2412", "s1223", "e423", "s3021",
         "ag35", "naca23012", "naca4415"
     ]
 
